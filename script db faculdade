@@ -1,0 +1,151 @@
+create database if not exists db_faculdade
+default charset utf8mb4
+default collate utf8mb4_0900_ai_ci;
+
+use db_faculdade;
+
+create table if not exists departamento(
+cod_departamento integer(4) auto_increment,
+nome_departamento char(20),
+primary key (cod_departamento)
+);
+create table if not exists tipo_telefone(
+cod_tipo int(4),
+tipo_telefone char(8),
+primary key (cod_tipo)
+);
+create table if not exists telefone(
+cod_telefone int(4) auto_increment,
+num_telefone char(20),
+fk_cod_tipo integer(4) not null,
+primary key (cod_telefone),
+foreign key (fk_cod_tipo) references tipo_telefone (cod_tipo)
+
+);
+select*from telefone;
+
+create table if not exists telefone_aluno(
+cod_tel_aluno int(4) auto_increment,
+fk_RA int(4) not null,
+fk_cod_telefone int(4) not null,
+primary key (cod_tel_aluno),
+foreign key(fk_RA) references aluno (RA),
+foreign key (fk_cod_telefone) references telefone (cod_telefone)
+);
+
+create table if not exists aluno(
+RA int(4) auto_increment,
+nome_aluno char(20),
+sobrenome_aluno char(20),
+CPF CHAR(11),
+status boolean,
+sexo char(1),
+nome_pai char(50),
+nome_mae char(50),
+email char(50),
+whatsapp char(20),
+fk_cod_curso int(4) not null,
+fk_cod_turma int(4) not null,
+fk_cod_endereco int(4) not null,
+primary key (RA),
+foreign key (fk_cod_curso) references curso (cod_curso),
+foreign key (fk_cod_turma) references turma (cod_turma),
+foreign key (fk_cod_endereco) references endereco (cod_endereco)
+);
+
+create table if not exists turma(
+cod_turma int(4),
+periodo char(8),
+nom_alunos int(4),
+dt_inicio date,
+dt_fim date,
+fk_cod_curso int(4) not null,
+primary key (cod_turma),
+foreign key (fk_cod_curso) references curso (cod_curso)
+);
+
+create table if not exists curso(
+cod_curso int(4),
+nome_curso char(20),
+fk_cod_departamento int(4) not null,
+primary key(cod_curso),
+foreign key (fk_cod_departamento) references departamento (cod_departamento)
+);
+
+create table if not exists curso_disciplina(
+fk_cod_curso int(4) not null,
+fk_cod_disciplina int(4) not null,
+foreign key (fk_cod_curso) references curso (cod_curso),
+foreign key (fk_cod_disciplina) references disciplina (cod_disciplina)
+);
+
+create table if not exists disciplina(
+cod_disciplina int(4) auto_increment,
+nome_disciplina char(20),
+carga_horaria int(4),
+descricao char(50),
+num_alunos int(4),
+fk_cod_departamento int(4) not null,
+primary key (cod_disciplina),
+foreign key (fk_cod_departamento) references departamento (cod_departamento)
+);
+
+create table if not exists historico(
+cod_historico int(4) auto_increment,
+dt_inicio date,
+dt_fim date,
+fk_RA int(4) not null,
+primary key (cod_historico),
+foreign key (fk_RA) references aluno (RA)
+);
+
+create table if not exists professor(
+cod_professor int(4),
+nome_professor char(20),
+sobrenome_professor char(50),
+status boolean,
+fk_cod_departamento int(4) not null,
+primary key (cod_professor),
+foreign key(fk_cod_departamento) references departamento (cod_departamento)
+);
+
+create table if not exists professor_disciplina(
+fk_cod_professor int(4) not null,
+fk_cod_disciplina int(4)not null,
+foreign key(fk_cod_professor) references professor (cod_professor),
+foreign key(fk_cod_disciplina) references disciplina (cod_disciplina)
+);
+
+create table if not exists disciplina_historico(
+nota float(4,2),
+frequencia int(4),
+fk_cod_historico int(4)not null,
+fk_cod_disciplina int(4) not null,
+foreign key (fk_cod_historico) references historico (cod_historico),
+foreign key (fk_cod_disciplina) references disciplina (cod_disciplina)
+);
+
+create table if not exists aluno_disciplina(
+fk_RA int (4),
+fk_cod_disciplina int(4) not null,
+foreign key (fk_RA) references aluno (RA),
+foreign key (fk_cod_disciplina) references disciplina (cod_disciplina)
+);
+
+create table if not exists endereco(
+cod_endereco int(4) auto_increment,
+nome_rua char(50),
+numero_rua int(4),
+complemento char(20),
+CEP char(8),
+fk_cod_tipo_logradouro int(4) not null,
+primary key (cod_endereco),
+foreign key (fk_cod_tipo_logradouro) references tipo_logradouro (cod_tipo_logradouro)
+);
+
+
+create table if not exists tipo_logradouro(
+cod_tipo_logradouro int(4),
+tipo_logradouro char(11),
+primary key (cod_tipo_logradouro)
+);
