@@ -1,0 +1,53 @@
+alter table departamento 
+change nome_departamento nome_departamento char(20) not null;
+
+alter table professor
+add foreign key (fk_cod_departamento)
+references departamento (cod_departamento);
+
+describe departamento;
+
+alter table curso
+add foreign key (fk_cod_departamento)
+references departamento (cod_departamento);
+
+alter table disciplina
+add foreign key (fk_cod_departamento)
+references departamento (cod_departamento);
+
+alter table professor 
+change nome_professor nome_professor char(20) not null;
+
+alter table professor 
+change sobrenome_professor sobrenome_professor char(50) not null;
+
+alter table curso 
+change cod_curso cod_curso int(4) auto_increment;
+
+alter table curso 
+change fk_cod_departamento  fk_cod_departamento int(4) ;
+
+
+alter table turma 
+change fk_cod_curso fk_cod_curso int(4);
+
+alter table disciplina
+change carga_horaria carga_horaria int(4);
+
+alter table disciplina
+change num_alunos num_alunos int(4);
+
+alter table telefone
+change fk_cod_tipo fk_cod_tipo integer(4);
+
+alter table endereco
+change nome_rua nome_rua char(50) not null;
+
+alter table endereco
+change numero_rua numero_rua int(4) not null;
+
+alter table endereco
+change complemento complemento char(20) not null;
+
+alter table endereco
+change CEP CEP char(8) not null;
