@@ -1,0 +1,421 @@
+insert into aluno
+
+(nome_aluno,sobrenome_aluno ,CPF,status,sexo ,nome_pai,nome_mae,email,whatsapp,fk_cod_curso,fk_cod_turma,fk_cod_endereco)
+values
+
+('maria','borges','00000000002','0','F','caio','teresa','maria.b1@gmail.com','998990102','21','9','2'),
+('maira','santos','00000000003','1','F','luciano','marina','maira.s1@gmail.com','999667782','1','1','3'),
+('paulo','dias','00000000004','1','F','carlos','erika','paulo,dias@gmail.com','987713400','2','2','4'),
+('alice','lima','00000000005','0','F','lucas','maria','alice.lima@gmail.com','988732323','21','9','5'),
+('herrique','torres','00000000006','1','M','joao','neiva','herrique.torres@gmail.com','993948567','3','3','6'),
+('marcela','souza','00000000007','1','F','tomas','giovana','marcela.souza@gmail.com','983873244','2','2','6'),
+('rafael','dias','00000000008','1','M','jean','marlene','rafael.dias@gmail.com','988332424','3','3','8'),
+('yasmin','andrade','00000000009','1','F','lucas','lucia','yasmin.andrade@gmail.com','977889001','1','1','9'),
+('hugo','franco','00000000010','1','M','wallison','barbara','hugo.franco@gmail.com','997752243','1','1','10'),
+('tatiane','nunes','00000000011','1','F','miguel','gabriela','tatiane.nunes@gmail.com','97665678','4','4','11'),
+('marlon','alencar','00000000012','1','M','marcelo','tatiana','marlon.alencar@gmail.com','990034554','4','4','12'),
+('victor','jesus','00000000013','1','M','igor','maria','victor.jesus@gmail.com','61988766732','4','4','13'),
+('luana','costa','00000000014','1','F','juvenal','vanessa','luana@costa@gmail.com','61988779966','5','5','14'),
+('julia','nunes','00000000015','1','F','cristian','lisangela','julia.nunes@gmail.com','6199887722','5','5','15'),
+('jorge','freitas','00000000016','0','M','vitor','clara','jorge.freitas@gmail.com','6178819101','21','9','16'),
+('deyse','siqueira','00000000017','1','F','eden','claudia','deyse.siqueira@gmail.com','61980806223','6','6','17'),
+('beatriz','oliveira','00000000018','1','F','alexander','lilian','beatriz.oliveira@gmail.com','61998803633','7','7','18'),
+('marcos','lobato','00000000019','1','M','vinicius','marta','marcos.lobato@gmail.com','61982665120','6','6','19'),
+('murio','lima','00000000020','1','M','herrique','marcia','murilo.lima@gmail.com','61981093305','7','7',20);
+
+
+
+insert into departamento
+
+(nome_departamento)
+values
+('sem departamento'),
+('ciencias_humanas'),
+('matematica'),
+('biologia'),
+('estagio'),
+('tecnologia');
+
+
+
+insert into curso
+
+(nome_curso,fk_cod_departamento)
+
+values
+('nenhum','16');
+('engenharia_software','5'),
+('analise_de_sistemas','5'),
+('biologia','3'),
+('Historia','1'),
+('matematica','2'),
+('engenharia_eletrica','4'),
+('psicologia','4'),
+('ciencias_computacao','5'),
+('cyber_seguranca','5'),
+('DBA','5');
+
+
+
+insert into disciplina
+
+(nome_disciplina,carga_horaria,descricao,num_alunos,fk_cod_departamento)
+
+values
+('Raciocinio logico','50',
+'permite_chegar_a_uma_determinada_con',
+'30','2'),
+('psicologia_cognitiv','30',
+'estudar_como_as_pessoas_sao_cap',
+'35','1'),
+('eletronica_digital','60',
+'utilizam_sinais_eletricos',
+'20','5'),
+('programacao_em_c','200',
+'estruturada,imperativa,procedural',
+'40','5'),
+('algoritmo','35',
+'é_a_área_que_armazena_os_dados_sendo',
+'35','5'),
+('Fundamentos_arquit','80',
+'modelo_da_organização_e_funcionamen',
+'30','5'),
+('Engenharia_requisi','80',
+ 'contribuem_para_a_produção_de_um_docu',
+ '30','5'),
+ ('Modelagem_softwe','80',
+ 'a_atividade_de_construir_modelos_que',
+ '30','5'),
+ ('Cálculo_diferenal','80',
+ 'é_o_estudo_das_funções,_por_alteraç',
+ '30','5'),
+ ('Gerenciamento_tw','80',
+ 'é_usado_por_uma_ampla_gama_de_empre',
+ '30','5'),
+ ('Banco_de_dados','80',
+ 'conjuntos de arquivos relacionados',
+ '35','5'),
+ ('Desenvolvimento','80',
+ ' e_o_ato_de_elaborar_e_implementar_um_se',
+ '30','5'),
+ ('Algoritmo_estr_d','80',
+ 'Algoritmos_e_estruturas_de_dados',
+ '30','5'),
+ ('Anatomia_Animal','120',
+ 'é_um_ramo_da_biologia_que_estuda_as_forma',
+ '40','3'),
+ ('Anatomia_Compara','120',
+ 'tem_por_finalidade_estudar_as_semelhan',
+ '40','3'),
+ ('Anatomia_Humana','120',
+ 'é_a_ciência_que_estuda_a_estrutura_',
+ '40','3'),
+ ('Bioclimatologia','120',
+ 'aplica_os_estudos_do_clima_às_relações_c',
+ '40','3'),
+ ('Bioestatística','120',
+ 'a_coleta,a_avaliação_e_a_análise_de_s',
+'40','3'),
+('Teorias_História','60',
+'é_um_campo_interdisciplinar_de_estudos_l',
+'25','1'),
+('Antropologia_Culturl','60',
+'é_uma_das_quatro_áreas_da_antropologi',
+'25','1'),
+('História_Antiga','60',
+'é_desenvolvimento_das_primeiras_civ',
+'25','1'),
+('História_Religiões','60',
+'estudo_dos_conjuntos_de_práticas_e_des',
+'25','1'),
+('História_Medieval','60',
+'As_principais_características_da_Idadea',
+'25','1'),
+('Introdução_Cálculo','80',
+'introduzimos_o_conceito_de_derivada_de',
+'35','2'),
+('Pré_Cálculo','80',
+'é_uma_disciplina-que_inclui_álg',
+'35','2'),
+('Álgebra_Linear','80',
+'surgiu_do_estudo_detalhado_de_sistemas',
+'35','2'),
+('História Matem','80',
+' estudo_que_busca_explorar_as_diversas',
+'35','2'),
+('Geometria_Analí','80',
+'é_o_estudo_da_geometria_por_meio_de_um',
+'35','2'),
+('Estatística','60',
+'teorias_probabilísticas_para_explica',
+'40','5'),
+('Fundamentos_arq','120',
+'modelo_da_organização_e_funcionamento_',
+'40','5');
+
+
+insert into professor
+
+(nome_professor,sobrenome_professor,status,fk_cod_departamento)
+
+values
+
+('luciano','fernandes','1','5'),
+('rodrigo','silva','1','2'),
+('teresa','nunes','1','4'),
+('clara','souza','1','3'),
+('caio','araujo','1','2'),
+('rafael','dias','1','1'),
+('gabriela','silva','0','1'),
+('joao','nunes','0','2'),
+('tiago','borges','0','4'),
+('pedro','castro','1','5');
+
+
+
+insert into professor_disciplina
+(fk_cod_professor,fk_cod_disciplina)
+
+values
+
+
+('12','1'),
+('14','14'),
+('15','25'),
+('16','2'),
+('18','20'),
+('19','27'),
+('22','9');
+
+
+insert into turma
+
+(periodo,num_alunos,dt_inicio,dt_fim,fk_cod_curso)
+
+values
+('segundo','55','2021-02-28','2025-03-25','5'),
+('terceiro','60','2020-03-01','2024-04-20','4'),
+('primeiro','120','2022-02-02','2024-03-22','3'),
+('nenhum','0','0000-00-00','0000-00-00','21'),
+('terceiro','65','2021-03-07','2024-04-13','6'),
+('segundo','70','2021-08-10','2024-12-30','9'),
+('quinto','50','2020-02-15','2024-10-26','7'),
+('oitavo','75','2018-04-03','2022-11-29','7'),
+('segundo','80','2021-09-02','2023-12-30','10'),
+('terceiro','55','2021-05-10','2024-10-27','8');
+
+
+insert into curso_disciplina
+(fk_cod_curso,fk_cod_disciplina)
+
+values
+('1','13'),
+('1','10'),
+('1','29'),
+('2','6'),
+('2','11'),
+('2','12'),
+('8','1'),
+('8','3'),
+('8','4'),
+('8','5'),
+('8','11'),
+('8','29'),
+('8','26'),
+('3','14'),
+('3','15'),
+('3','16'),
+('3','17'),
+('3','18'),
+('4','19'),
+('4','20'),
+('4','21'),
+('4','22'),
+('4','23'),
+('5','24'),
+('5','25'),
+('5','26'),
+('5','27'),
+('5','28'),
+('7','2'),
+('10','11');
+
+
+
+
+insert into tipo_logradouro
+(tipo_logradouro)
+values
+('praca'),
+('avenida'),
+('condominio'),
+('chacara'),
+('estrada');
+
+
+
+insert into endereco
+(nome_rua,numero_rua,complemento,CEP,fk_cod_tipo_logradouro)
+values
+('parque águas claras','101','portal dos ipés','01010111','5'),
+('são josé','201','cond.alphaville','02020222','3'),
+('são paulo','302','cond.alto boa vista','03030333','3'),
+('praça canario','105','cond.via naturale','04040444','1'),
+('ponte alta','019','vila santa teresa','05050555','4'),
+('lago azul','401','flores do ipe','06060666','5'),
+('vermelho','23','rio verde','07070777','4'),
+('amarelo','202','araucarias','08080888','2'),
+('verde','003','vila verde','09090999','4'),
+('rosa','801','cond.rosa vermelha','10100100','3'),
+('roxo','206','praça joão de barro','11011011','1'),
+('pride','100','avenida rainbow','12012012','2'),
+('noxus','803','estrada leblanc','13013013','5'),
+('demacia','102','praça luxana','14014014','1'),
+('sentina','010','chacara pyke','15015015','4'),
+('ionia','104','estrada karma','16016016','5'),
+('runeterra','303','cond.taliyah','17017017','3'),
+('piltover','001','estrada jinx','18018018','5'),
+('zaun','107','avenida zeri','19019019','2'),
+('shurima','205','avenira azir','20020020','2');
+
+
+
+
+insert into tipo_telefone
+(tipo_telefone)
+values
+('celular'),
+('residencial'),
+('comercial');
+
+
+insert into telefone
+(num_telefone,fk_cod_tipo)
+values
+('61998990102','4'),
+('61990908788','4'),
+('61987879090','4'),
+('34566603','5'),
+('08009803020','6'),
+('61989890909','4'),
+('61901019990','4'),
+('61988097887','4'),
+('33545466','5'),
+('08013204001','6'),
+('61999009090','4'),
+('61990034554','4'),
+('61988766732','4'),
+('61988779966','4'),
+('61995556622','4'),
+('61981812234','4'),
+('61998803633','4'),
+('61991213232','4'),
+('61978776540','4');
+
+
+
+insert into aluno_disciplina
+(fk_RA,fk_cod_disciplina)
+values
+('2','10'),
+('2','13'),
+('2','29'),
+('4','10'),
+('4','13'),
+('4','29'),
+('5','6'),
+('5','11'),
+('5','12'),
+('7','14'),
+('7','15'),
+('7','16'),
+('7','17'),
+('7','18'),
+('8','6'),
+('8','11'),
+('8','12'),
+('9','14'),
+('9','15'),
+('9','16'),
+('9','17'),
+('9','18'),
+('10','10'),
+('10','13'),
+('10','29'),
+('11','10'),
+('11','13'),
+('11','29'),
+('12','19'),
+('12','20'),
+('12','21'),
+('12','22'),
+('12','23'),
+('13','19'),
+('13','20'),
+('13','21'),
+('13','22'),
+('13','23'),
+('14','19'),
+('14','20'),
+('14','21'),
+('14','22'),
+('14','23'),
+('15','24'),
+('15','25'),
+('15','26'),
+('15','27'),
+('15','28'),
+('16','24'),
+('16','25'),
+('16','26'),
+('16','27'),
+('16','28'),
+('19','2'),
+('21','2');
+
+
+insert into telefone_aluno
+(fk_RA,fk_cod_telefone)
+values
+('2','1'),
+('2','2'),
+('2','3'),
+('3','4'),
+('5','5'),
+('6','6'),
+('6','7'),
+('6','8'),
+('7','9'),
+('8','10'),
+('10','11'),
+('10','12'),
+('10','13'),
+('11','14'),
+('13','15'),
+('14','16'),
+('15','17'),
+('17','18'),
+('18','19'),
+('19','20'),
+('20','21'),
+('21','22');
+
+
+insert into historico
+(dt_inicio,dt_fim,fk_RA)
+values
+('2022-02-10','2024-03-12','2'),
+('2022-02-10','2024-03-12','4'),
+('2022-02-22','2024-04-22','5'),
+('2022-02-02','2024-03-22','7'),
+('2022-02-22','2024-04-22','8'),
+('2022-02-02','2024-03-22','9'),
+('2022-02-10','2024-03-12','10'),
+('2022-02-10','2024-03-12','11'),
+('2020-03-01','2024-04-20','12'),
+('2020-03-01','2024-04-20','13'),
+('2020-03-01','2024-04-20','14'),
+('2021-02-28','2025-03-25','15'),
+('2021-02-28','2015-03-25','16'),
+('2020-02-15','2024-10-26','19'),
+('2018-04-03','2022-11'-29,'21');
